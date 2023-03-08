@@ -15,7 +15,6 @@ return new class extends Migration
     {
         Schema::create('project_technology', function (Blueprint $table) {
             $table->id();
-
             // colonna per project
             $table->unsignedBigInteger('project_id');
             //aggiungo foreing key
@@ -25,7 +24,6 @@ return new class extends Migration
             $table->unsignedBigInteger('technology_id');
             //aggiungo foreing key
             $table->foreign('technology_id')->references('id')->on('technologies')->cascadeOnDelete();
-
             $table->timestamps();
         });
     }

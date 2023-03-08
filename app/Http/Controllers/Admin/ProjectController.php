@@ -50,16 +50,17 @@ class ProjectController extends Controller
 
         $form_data['slug'] = $slug;
         
-        // aggiungo
+        //////// aggiungo
 
         $form_data['slug'] = $slug;
 
         $newProject = new Project();
-        if($request->hasFile('cover_image')){
-            $path = Storage::disk('public')->put('post_images', $request->cover_image);
-            
+
+        if($request->has('cover_image')){
+            $path = Storage::disk('public')->put('test.jpeg',$request->cover_image);
             $form_data['cover_image'] = $path;
         }
+
         $newProject->fill($form_data);
         $newProject->save();
 
@@ -106,6 +107,7 @@ class ProjectController extends Controller
         $form_data = $request->validated();
 
         $slug = Project::generateSlug($request->title, '-');
+
         $form_data['slug'] = $slug;
 
         if($request->has('cover_image')){

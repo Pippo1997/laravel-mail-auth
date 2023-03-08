@@ -15,7 +15,7 @@
             </div>
         @endif
         <div class="col-12">
-            <form action="{{ route('admin.projects.store', $project->slug) }}" method="POST">
+            <form action="{{ route('admin.projects.store', $project->slug) }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="form-group my-3">
                 <label class="control-label">

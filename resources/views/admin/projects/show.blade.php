@@ -14,7 +14,7 @@
         </div>
         <div class="col-12">
             <div>
-                <img src="{{asset('storage/' .$project->cover_image)}}" alt="{{$project->title}}" class="w-50">
+                <img src="{{ asset('storage/'.$project->cover_image) }}" alt="{{$project->title}}" class="w-50">
             </div>
             <p><strong>Slug: </strong>{{ $project->slug }}</p>
             <label class="d-block"><strong>Contenuto:</strong></label>

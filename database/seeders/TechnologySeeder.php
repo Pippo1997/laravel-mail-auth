@@ -19,7 +19,9 @@ class TechnologySeeder extends Seeder
         $technologies = ['HTML', 'CSS', 'PHP', 'JAVASCRIPT', 'LARAVEL', 'VUE'];
 
         foreach($technologies as $technology){
+
             $newTechnology = new Technology();
+
             $newTechnology->name = $technology;
             $newTechnology->slug = Str::slug($newTechnology->name, '-');
 
